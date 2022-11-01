@@ -1,0 +1,12 @@
+aws:
+    dynamodb:
+        endpoint: http://localhost:4566
+        region: us-east-1
+        access-key: default_access_key
+        secret-key: default_secret_key
+
+spring:
+    cloud:
+        function:
+            definition: functionRouter
+            routing-expression: headers.function

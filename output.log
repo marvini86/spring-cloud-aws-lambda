@@ -1,0 +1,200 @@
+START RequestId: 9f50e72b-2c09-4ab4-91b3-677efb6dce92 Version: $LATEST
+16:07:53.873 [main] INFO org.springframework.cloud.function.utils.FunctionClassUtils - Searching for start class in manifest: jar:file:/var/runtime/lib/aws-lambda-java-core-1.2.0.jar!/META-INF/MANIFEST.MF
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: adsuresh
+Created-By: Apache Maven 3.5.0
+Build-Jdk: 1.8.0_144
+
+16:07:53.982 [main] INFO org.springframework.cloud.function.utils.FunctionClassUtils - Searching for start class in manifest: jar:file:/var/runtime/lib/aws-lambda-java-runtime-0.2.0.jar!/META-INF/MANIFEST.MF
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: root
+Created-By: Apache Maven 3.6.3
+Build-Jdk: 1.8.0_332
+
+16:07:53.991 [main] INFO org.springframework.cloud.function.utils.FunctionClassUtils - Searching for start class in manifest: jar:file:/var/runtime/lib/aws-lambda-java-serialization-0.2.0.jar!/META-INF/MANIFEST.MF
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: root
+Created-By: Apache Maven 3.6.3
+Build-Jdk: 1.8.0_332
+
+16:07:53.999 [main] INFO org.springframework.cloud.function.utils.FunctionClassUtils - Searching for start class in manifest: jar:file:/var/runtime/lib/org-crac-inmemory-0.1.0.jar!/META-INF/MANIFEST.MF
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: root
+Created-By: Apache Maven 3.6.3
+Build-Jdk: 1.8.0_332
+
+16:07:54.003 [main] INFO org.springframework.cloud.function.utils.FunctionClassUtils - Searching for start class in manifest: jar:file:/var/runtime/amzn-log4j-security-jdk11-0.1alpha.jar!/META-INF/MANIFEST.MF
+Manifest-Version: 1.0
+Premain-Class: Log4jPatch
+Created-By: 11.0.13 (Amazon.com Inc.)
+
+16:07:54.013 [main] INFO org.springframework.cloud.function.utils.FunctionClassUtils - Searching for start class in manifest: file:/var/task/META-INF/MANIFEST.MF
+Manifest-Version: 1.0
+Created-By: Maven JAR Plugin 3.2.2
+Build-Jdk-Spec: 11
+Implementation-Title: lambdaexample
+Implementation-Version: 0.0.1-SNAPSHOT
+Main-Class: org.springframework.boot.loader.wrapper.ThinJarWrapper
+Start-Class: br.com.labs.books.Application
+Spring-Boot-Version: 2.6.3
+Spring-Boot-Classes: 
+
+16:07:54.885 [main] INFO org.springframework.cloud.function.utils.FunctionClassUtils - Loaded Start Class: class br.com.labs.books.Application
+16:07:54.886 [main] INFO org.springframework.cloud.function.utils.FunctionClassUtils - Main class: class br.com.labs.books.Application
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                        
+
+2022-08-07 16:08:10.075  INFO 15 --- [           main] o.s.c.f.a.aws.CustomRuntimeInitializer   : AWS Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker
+2022-08-07 16:08:10.379  INFO 15 --- [           main] lambdainternal.AWSLambda                 : Starting AWSLambda using Java 11.0.14.1 on a11c9d5f0967 with PID 15 (/var/runtime/lib/aws-lambda-java-runtime-0.2.0.jar started by root in /var/task)
+2022-08-07 16:08:10.382  INFO 15 --- [           main] lambdainternal.AWSLambda                 : The following profiles are active: local
+2022-08-07 16:08:39.018  INFO 15 --- [           main] lambdainternal.AWSLambda                 : Started AWSLambda in 41.915 seconds (JVM running for 49.068)
+2022-08-07 16:08:39.046  INFO 15 --- [           main] o.s.c.f.adapter.aws.FunctionInvoker      : Locating function: 'null'
+2022-08-07 16:08:39.131  INFO 15 --- [           main] o.s.c.f.adapter.aws.FunctionInvoker      : Located function: 's3Function'
+2022-08-07 16:08:39.172  INFO 15 --- [           main] o.s.c.f.adapter.aws.FunctionInvoker      : Received: {
+  "Records": [
+    {
+      "eventVersion": "2.0",
+      "eventTime": "1970-01-01T00:00:00.000Z",
+      "requestParameters": {
+        "sourceIPAddress": "127.0.0.1"
+      },
+      "s3": {
+        "configurationId": "testConfigRule",
+        "object": {
+          "eTag": "0123456789abcdef0123456789abcdef",
+          "sequencer": "0A1B2C3D4E5F678901",
+          "key": "LICENSE.txt",
+          "size": 1024
+        },
+        "bucket": {
+          "arn": "arn:aws:s3:::maidenbucket",
+          "name": "maidenbucket",
+          "ownerIdentity": {
+            "principalId": "EXAMPLE"
+          }
+        },
+        "s3SchemaVersion": "1.0"
+      },
+      "responseElements": {
+        "x-amz-id-2": "EXAMPLE123/5678abcdefghijklambdaisawesome/mnopqrstuvwxyzABCDEFGH",
+        "x-amz-request-id": "EXAMPLE123456789"
+      },
+      "awsRegion": "us-east-1",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "EXAMPLE"
+      },
+      "eventSource": "aws:s3"
+    }
+  ]
+}
+2022-08-07 16:08:39.241  INFO 15 --- [           main] o.s.c.f.adapter.aws.AWSLambdaUtils       : Incoming JSON Event: {
+  "Records": [
+    {
+      "eventVersion": "2.0",
+      "eventTime": "1970-01-01T00:00:00.000Z",
+      "requestParameters": {
+        "sourceIPAddress": "127.0.0.1"
+      },
+      "s3": {
+        "configurationId": "testConfigRule",
+        "object": {
+          "eTag": "0123456789abcdef0123456789abcdef",
+          "sequencer": "0A1B2C3D4E5F678901",
+          "key": "LICENSE.txt",
+          "size": 1024
+        },
+        "bucket": {
+          "arn": "arn:aws:s3:::maidenbucket",
+          "name": "maidenbucket",
+          "ownerIdentity": {
+            "principalId": "EXAMPLE"
+          }
+        },
+        "s3SchemaVersion": "1.0"
+      },
+      "responseElements": {
+        "x-amz-id-2": "EXAMPLE123/5678abcdefghijklambdaisawesome/mnopqrstuvwxyzABCDEFGH",
+        "x-amz-request-id": "EXAMPLE123456789"
+      },
+      "awsRegion": "us-east-1",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "EXAMPLE"
+      },
+      "eventSource": "aws:s3"
+    }
+  ]
+}
+2022-08-07 16:08:39.773  INFO 15 --- [           main] o.s.c.f.adapter.aws.AWSLambdaUtils       : Incoming request headers: {id=c1b212b1-9e86-96a7-b9a4-ccf146b2560f, timestamp=1659888519233}
+2022-08-07 16:08:39.808  INFO 15 --- [           main] br.com.labs.books.function.S3Function   : S3 Event processing starts with record: {[com.amazonaws.services.lambda.runtime.events.models.s3.S3EventNotification$S3EventNotificationRecord@6731787b]}
+2022-08-07 16:08:39.824  INFO 15 --- [           main] br.com.labs.books.function.S3Function   : Received record with bucket: maidenbucket  and key:  LICENSE.txt
+Unable to execute HTTP request: Connect to localhost:4566 [localhost/127.0.0.1] failed: Connection refused (Connection refused): com.amazonaws.SdkClientException
+com.amazonaws.SdkClientException: Unable to execute HTTP request: Connect to localhost:4566 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleRetryableException(AmazonHttpClient.java:1219)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1165)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:814)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:781)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:755)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:715)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:697)
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:561)
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:541)
+	at com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5456)
+	at com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5403)
+	at com.amazonaws.services.s3.AmazonS3Client.getObject(AmazonS3Client.java:1524)
+	at com.amazonaws.services.s3.AmazonS3Client.getObject(AmazonS3Client.java:1378)
+	at br.com.labs.books.function.S3Function.apply(S3Function.java:30)
+	at br.com.labs.books.function.S3Function.apply(S3Function.java:14)
+	at org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.invokeFunctionAndEnrichResultIfNecessary(SimpleFunctionRegistry.java:897)
+	at org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.invokeFunction(SimpleFunctionRegistry.java:853)
+	at org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.doApply(SimpleFunctionRegistry.java:708)
+	at org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.apply(SimpleFunctionRegistry.java:551)
+	at org.springframework.cloud.function.adapter.aws.FunctionInvoker.handleRequest(FunctionInvoker.java:113)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:4566 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+	at com.amazonaws.http.conn.$Proxy36.connect(Unknown Source)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1346)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1157)
+	... 22 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.base/java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 38 more
+
+END RequestId: 9f50e72b-2c09-4ab4-91b3-677efb6dce92
+REPORT RequestId: 9f50e72b-2c09-4ab4-91b3-677efb6dce92	Init Duration: 0.90 ms	Duration: 52031.21 ms	Billed Duration: 52032 ms	Memory Size: 320 MB	Max Memory Used: 320 MB	
+{"errorMessage":"Unable to execute HTTP request: Connect to localhost:4566 [localhost/127.0.0.1] failed: Connection refused (Connection refused)","errorType":"com.amazonaws.SdkClientException","stackTrace":["com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleRetryableException(AmazonHttpClient.java:1219)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1165)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:814)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:781)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:755)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:715)","com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:697)","com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:561)","com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:541)","com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5456)","com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5403)","com.amazonaws.services.s3.AmazonS3Client.getObject(AmazonS3Client.java:1524)","com.amazonaws.services.s3.AmazonS3Client.getObject(AmazonS3Client.java:1378)","br.com.labs.books.function.S3Function.apply(S3Function.java:30)","br.com.labs.books.function.S3Function.apply(S3Function.java:14)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.invokeFunctionAndEnrichResultIfNecessary(SimpleFunctionRegistry.java:897)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.invokeFunction(SimpleFunctionRegistry.java:853)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.doApply(SimpleFunctionRegistry.java:708)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.apply(SimpleFunctionRegistry.java:551)","org.springframework.cloud.function.adapter.aws.FunctionInvoker.handleRequest(FunctionInvoker.java:113)","java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)","java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)","java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)","java.base/java.lang.reflect.Method.invoke(Unknown Source)"],"cause":{"errorMessage":"Connect to localhost:4566 [localhost/127.0.0.1] failed: Connection refused (Connection refused)","errorType":"org.apache.http.conn.HttpHostConnectException","stackTrace":["org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)","org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)","java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)","java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)","java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)","java.base/java.lang.reflect.Method.invoke(Unknown Source)","com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)","com.amazonaws.http.conn.$Proxy36.connect(Unknown Source)","org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)","org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)","org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)","org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)","org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)","org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)","com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1346)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1157)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:814)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:781)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:755)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:715)","com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:697)","com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:561)","com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:541)","com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5456)","com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5403)","com.amazonaws.services.s3.AmazonS3Client.getObject(AmazonS3Client.java:1524)","com.amazonaws.services.s3.AmazonS3Client.getObject(AmazonS3Client.java:1378)","br.com.labs.books.function.S3Function.apply(S3Function.java:30)","br.com.labs.books.function.S3Function.apply(S3Function.java:14)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.invokeFunctionAndEnrichResultIfNecessary(SimpleFunctionRegistry.java:897)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.invokeFunction(SimpleFunctionRegistry.java:853)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.doApply(SimpleFunctionRegistry.java:708)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.apply(SimpleFunctionRegistry.java:551)","org.springframework.cloud.function.adapter.aws.FunctionInvoker.handleRequest(FunctionInvoker.java:113)","java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)","java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)","java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)","java.base/java.lang.reflect.Method.invoke(Unknown Source)"],"cause":{"errorMessage":"Connection refused (Connection refused)","errorType":"java.net.ConnectException","stackTrace":["java.base/java.net.PlainSocketImpl.socketConnect(Native Method)","java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)","java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)","java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)","java.base/java.net.SocksSocketImpl.connect(Unknown Source)","java.base/java.net.Socket.connect(Unknown Source)","org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)","org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)","org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)","java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)","java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)","java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)","java.base/java.lang.reflect.Method.invoke(Unknown Source)","com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)","com.amazonaws.http.conn.$Proxy36.connect(Unknown Source)","org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)","org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)","org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)","org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)","org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)","org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)","com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1346)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1157)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:814)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:781)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:755)","com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:715)","com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:697)","com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:561)","com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:541)","com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5456)","com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5403)","com.amazonaws.services.s3.AmazonS3Client.getObject(AmazonS3Client.java:1524)","com.amazonaws.services.s3.AmazonS3Client.getObject(AmazonS3Client.java:1378)","br.com.labs.books.function.S3Function.apply(S3Function.java:30)","br.com.labs.books.function.S3Function.apply(S3Function.java:14)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.invokeFunctionAndEnrichResultIfNecessary(SimpleFunctionRegistry.java:897)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.invokeFunction(SimpleFunctionRegistry.java:853)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.doApply(SimpleFunctionRegistry.java:708)","org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.apply(SimpleFunctionRegistry.java:551)","org.springframework.cloud.function.adapter.aws.FunctionInvoker.handleRequest(FunctionInvoker.java:113)","java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)","java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)","java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)","java.base/java.lang.reflect.Method.invoke(Unknown Source)"]}}}

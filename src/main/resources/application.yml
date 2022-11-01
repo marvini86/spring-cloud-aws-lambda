@@ -1,0 +1,12 @@
+aws:
+    dynamodb:
+        endpoint: dynamodb.us-east-2.amazonaws.com
+        region: us-east-2
+        access-key: ${ACCESS_KEY}
+        secret-key: ${SECRET_KEY}
+
+spring:
+    cloud:
+        function:
+            definition: functionRouter
+            routing-expression: headers.function

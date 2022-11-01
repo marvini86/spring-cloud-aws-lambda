@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Spring Cloud Functions.
+
+Parameters:
+  EnvironmentName:
+    Type: String
+    Default: local
+Resources:
+  AwsLambdaS3Local:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: s3Function
+      Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
+      Description: For AWS S3
+      Runtime: java11
+      CodeUri: ./target/lambdaexample-0.0.1-SNAPSHOT-aws.jar
+      MemorySize: 320
+      Timeout: 120
+      Environment:
+        Variables:
+          SPRING_PROFILES_ACTIVE: !Ref EnvironmentName
